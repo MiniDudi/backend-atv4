@@ -76,21 +76,21 @@
 
 ## Casos de Uso
 
-### 5.1. Tutor
+### Tutor
 
 -  Cadastrar animal
 -  Agendar consulta
 -  Visualizar histórico de vacinação
 -  Acessar prontuário do animal
 
-### 5.2. Veterinário
+### Veterinário
 
 -  Realizar consultas
 -  Registrar atendimentos
 -  Aplicar e registrar vacinas
 -  Emitir prontuário
 
-### 5.3. Administrador
+### Administrador
 
 -  Gerenciar cadastro de veterinários
 -  Gerenciar especialidades permitidas

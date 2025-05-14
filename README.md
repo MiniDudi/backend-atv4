@@ -1,3 +1,8 @@
+# Integrantes
+
+#### Eduardo Henrique Natividade Pinese - 235182
+#### João Vitor Amaral Franzoni - 236279
+
 # Diagrama de Classes
 
 ![Imagem do WhatsApp de 2025-05-13 à(s) 20 19 10_b00cd17f](https://github.com/user-attachments/assets/86abbb71-8ba1-4161-817d-9929cf285149)

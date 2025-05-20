@@ -86,7 +86,7 @@ public class AnimalController {
         animal.setDataNascimento(LocalDate.parse(dto.getDataNascimento()));
 
         Tutor tutor = new Tutor();
-        tutor.setId(dto.getTutorId());
+        tutor.setId(dto.getTutorId()); 
         animal.setTutor(tutor);
 
         return animal;

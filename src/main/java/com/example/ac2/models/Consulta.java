@@ -120,4 +120,11 @@ public class Consulta {
     public void setProntuario(Prontuario prontuario) {
         this.prontuario = prontuario;
     }
+
+    @Override
+    public String toString() {
+        return "Consulta [id=" + id + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + ", dataHora=" + dataHora
+                + ", observacoes=" + observacoes + ", animal=" + animal + ", veterinario=" + veterinario
+                + ", prontuario=" + prontuario + "]";
+    }
 }

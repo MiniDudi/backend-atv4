@@ -6,6 +6,7 @@ import java.util.List;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -28,14 +29,14 @@ public class Prontuario {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
     
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "animal_id", nullable = false)
     private Animal animal;
     
-    @OneToMany(mappedBy = "prontuario", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "prontuario", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Consulta> consultas;
     
-    @OneToMany(mappedBy = "prontuario", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "prontuario", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Vacina> vacinas;
 
     

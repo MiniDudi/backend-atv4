@@ -2,7 +2,6 @@ package com.example.ac2.models;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Set;
 
 import com.example.ac2.enums.Especie;
 
@@ -13,6 +12,7 @@ import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -50,7 +50,7 @@ public class Veterinario {
     @Enumerated(EnumType.STRING)
     private List<Especie> especiesAtendidas;
 
-    @OneToMany(mappedBy = "veterinario", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "veterinario", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Consulta> consultas;
 
     @PrePersist

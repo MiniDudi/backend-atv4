@@ -76,10 +76,15 @@ public class ConsultaServiceImpl implements ConsultaService {
         if (!veterinario.getEspeciesAtendidas().contains(animal.getEspecie())) {
             throw new IllegalArgumentException("Veterinário não está habilitado para esta espécie");
         }
+
+        if (consultaRepository.existsByVeterinarioIdAndDataHora(consulta.getVeterinario().getId(), consulta.getDataHora())) {
+            throw new IllegalArgumentException("Veterinário já possui uma consulta marcada neste horário");
+        }
+
     }
 
     @Override
-    public List<Consulta> listarPorAnimalId(Long id) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public List<Consulta> listarPorAnimalId(Long animalId) {
+        return consultaRepository.findByAnimalId(animalId);
     }
 }

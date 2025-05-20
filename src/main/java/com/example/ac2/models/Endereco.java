@@ -26,6 +26,20 @@ public class Endereco {
     @Column(nullable = false)
     private String cep;
 
+    public Endereco(String rua, String numero, String complemento, String bairro, String cidade, String estado,
+            String cep) {
+        this.rua = rua;
+        this.numero = numero;
+        this.complemento = complemento;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.cep = cep;
+    }
+
+    public Endereco() {
+    }
+
     // getters e setters
     public String getRua() {
         return rua;

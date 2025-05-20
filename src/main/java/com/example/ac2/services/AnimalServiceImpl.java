@@ -47,16 +47,19 @@ public class AnimalServiceImpl implements AnimalService {
         return animalRepository.findByTutorId(tutorId);
     }
 
-    private void validarAnimal(Animal animal) {
-        if (animal.getEspecie() == null) {
-            throw new IllegalArgumentException("Espécie é obrigatória");
-        }
-        if (animal.getTutor() == null || animal.getTutor().getId() == null) {
-            throw new IllegalArgumentException("Tutor é obrigatório");
-        }
-        Tutor tutor = tutorService.buscarPorId(animal.getTutor().getId());
-        if (tutor == null) {
-            throw new IllegalArgumentException("Tutor não encontrado");
-        }
+private void validarAnimal(Animal animal) {
+    if (animal.getEspecie() == null) {
+        throw new IllegalArgumentException("Espécie é obrigatória");
     }
+
+    if (animal.getTutor() == null || animal.getTutor().getId() == null) {
+        throw new IllegalArgumentException("Tutor é obrigatório");
+    }
+
+    Tutor tutor = tutorService.buscarPorId(animal.getTutor().getId());
+    if (tutor == null) {
+        throw new IllegalArgumentException("Tutor não encontrado");
+    }
+}
+
 }

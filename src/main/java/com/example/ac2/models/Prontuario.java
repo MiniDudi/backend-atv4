@@ -12,8 +12,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 
 @Entity
@@ -39,16 +37,7 @@ public class Prontuario {
     
     @OneToMany(mappedBy = "prontuario", cascade = CascadeType.ALL)
     private List<Vacina> vacinas;
-    
-    @PrePersist
-    void createdAt() {
-        this.createdAt = LocalDateTime.now();
-    }
-    
-    @PreUpdate
-    void updatedAt() {
-        this.updatedAt = LocalDateTime.now();
-    }
+
     
     // getters e setters
     public Long getId() { return id; }

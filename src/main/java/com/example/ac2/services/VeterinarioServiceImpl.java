@@ -41,8 +41,15 @@ public class VeterinarioServiceImpl implements VeterinarioService {
     }
 
     @Override
-    public List<Veterinario> listarPorEspecie(String especie) {
-        return veterinarioRepository.findByEspeciesAtendidas(especie);
+    public List<Veterinario> listarPorEspecie(String especieString) {
+        Especie especieEnum;
+        try {
+            especieEnum = Especie.valueOf(especieString.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            throw new RuntimeException("Espécie inválida: " + especieString);
+        }
+
+        return veterinarioRepository.findByEspeciesAtendidas(especieEnum);
     }
 
     private void validarVeterinario(Veterinario veterinario) {

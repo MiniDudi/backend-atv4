@@ -42,14 +42,20 @@ public class Tutor {
     @OneToMany(mappedBy = "tutor", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Animal> animais;
 
-    @PrePersist
-    void createdAt() {
-        this.createdAt = LocalDateTime.now();
+
+    public Tutor(Long id, LocalDateTime createdAt, LocalDateTime updatedAt, String nome, String cpf, String telefone,
+            Endereco endereco, List<Animal> animais) {
+        this.id = id;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.endereco = endereco;
+        this.animais = animais;
     }
 
-    @PreUpdate
-    void updatedAt() {
-        this.updatedAt = LocalDateTime.now();
+    public Tutor() {
     }
 
     // getters e setters
